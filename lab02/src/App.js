@@ -1,10 +1,12 @@
 import './App.css';
-import ProductList from './ProductList';
+import ProductList from './Products/ProductList';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        
         <ProductList/>
       </header>
     </div>
