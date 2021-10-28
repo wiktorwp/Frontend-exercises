@@ -27,7 +27,9 @@ const MovieForm = ({ movies, directors, addMovieAction },props) => {
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
                     <Form>
-                        <Field name="name" />
+                        Nazwa filmu:
+                        <Field name="name" /><br/>
+                        Rok produkcji:
                         <Field name="year" />
                         <button type="submit">
                             Zatwierdz
