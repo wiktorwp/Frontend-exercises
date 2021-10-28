@@ -12,6 +12,7 @@ import DirectorForm from './directors/DirectorForm';
 import MovieForm from './movies/MovieForm';
 import DirectorDetails from './directors/DirectorDetails';
 import PostForm from './posts/PostForm';
+import DirectorEdit from './directors/DirectorEdit';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/directors/:id/edit">
+            <DirectorEdit />
+          </Route>
           <Route path="/directors/:id/posts/add">
             <PostForm />
           </Route>

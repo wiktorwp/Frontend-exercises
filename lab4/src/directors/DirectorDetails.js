@@ -10,12 +10,13 @@ const DirectorDetails = ({director}, props) => {
             <h3>Director details</h3>
 
             <div>
-                <p>Name: {director.name}</p>
-                <p>Email: {director.email}</p>
+                <p>Imie: {director.name}</p>
+                <p>Nazwisko: {director.lastname}</p>
+                <p>Wiek: {director.age}</p>
             </div>
             <div>
                 <div>
-                    <Link to={`/directorss/${director.id}/posts/add`}>Create post</Link>
+                    <Link to={`/directors/${director.id}/edit`}>Edit Director</Link>
                 </div>
                 <PostList />
             </div>

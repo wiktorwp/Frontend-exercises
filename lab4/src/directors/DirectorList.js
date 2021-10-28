@@ -10,12 +10,12 @@ const DirectorList = ({ directors, deleteDirectorAction } ,props) => {
             {directors.map(director => {
                 return (
                 <div>
-                    <Link to={`directors/${director.id}`}>
+                    <Link to={`/directors/${director.id}`}>
                         {director.name}
                     </Link>
                     <button onClick={() => deleteDirectorAction(director)}>Usuń</button>
                 </div>)})}
-            }
+            
         </div>
     )
 };

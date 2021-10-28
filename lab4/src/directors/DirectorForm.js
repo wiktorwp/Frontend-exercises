@@ -22,13 +22,18 @@ const DirectorForm = ({history, addDirectorAction},props) => {
                 initialValues={{
                     id: uuidv4(),
                     name: '',
-                    email: ''
+                    lastname: '',
+                    age: ''
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
                     <Form>
-                        <Field name="name" />
-                        <Field name="email" />
+                        Imie
+                        <Field name="name" /><br/>
+                        Nazwisko
+                        <Field name="lastname" /><br/>
+                        Wiek
+                        <Field name="age" />
                         <button type="submit">
                             Zatwierdz
                         </button>

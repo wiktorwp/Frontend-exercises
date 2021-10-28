@@ -1,4 +1,4 @@
-import { DIRECTOR_ADD, DIRECTOR_DELETE } from "../actions/DirectorActions";
+import { DIRECTOR_ADD, DIRECTOR_DELETE, DIRECTOR_EDIT } from "../actions/DirectorActions";
 
 export const directorReducer = (state = [], action) => {
     console.log(action);
@@ -9,6 +9,8 @@ export const directorReducer = (state = [], action) => {
             return [...state.filter(el => el.id !== action.payload.id)];
         default:
             return state;
+        case DIRECTOR_EDIT:
+            return [...state.filter(el => el.id !== action.payload.id), action.payload];
     }
 }
 
