@@ -1,31 +1,26 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import PostList from "../posts/PostList";
-const DirectorDetails = ({director}, props) => {
+import ActorAssign from "../actors/ActorAssign";
+const MovieDetails = ({movie}, props) => {
 
 
     return (
         <div>
-            <h3>Director details</h3>
+            <h3>Movie details</h3>
 
             <div>
-                <p>Name: {director.name}</p>
-                <p>Email: {director.email}</p>
+                <p>Nazwa Filmu: {movie.name}</p>
+                <p>Rok produkcji: {movie.year}</p>
             </div>
-            <div>
-                <div>
-                    <Link to={`/directorss/${director.id}/posts/add`}>Create post</Link>
-                </div>
-                <PostList />
-            </div>
+            <ActorAssign/>
         </div>
     )
 };
 
 
 const mapStateToProps = (state, props) => ({
-    director: state.directors.find(director => director.id === props.match.params.id)
+    movie: state.movies.find(movie => movie.id === props.match.params.id)
 });
 
-export default withRouter(connect(mapStateToProps, null)(DirectorDetails));
+export default withRouter(connect(mapStateToProps, null)(MovieDetails));

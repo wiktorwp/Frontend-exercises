@@ -7,7 +7,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { directorReducer } from './reducers/DirectorReducer';
 import { movieReducer } from './reducers/MovieReducer';
-import { postReducer } from './reducers/PostReducer';
+import { actorReducer } from './reducers/ActorReducer';
 import logger from './middlewares/Logger';
 
 let store = createStore(
@@ -15,7 +15,7 @@ let store = createStore(
     { 
       directors: directorReducer,
       movies: movieReducer,
-      posts: postReducer
+      actors: actorReducer
     }
   ), applyMiddleware(logger));
 
