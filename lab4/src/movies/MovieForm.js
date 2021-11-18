@@ -22,7 +22,8 @@ const MovieForm = ({ movies, directors, addMovieAction },props) => {
                 initialValues={{
                     id: uuidv4(),
                     name: '',
-                    year: ''
+                    year: '',
+                    actorsActing: []
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>

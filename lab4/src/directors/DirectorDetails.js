@@ -18,7 +18,7 @@ const DirectorDetails = ({director}, props) => {
                 <div>
                     <Link to={`/directors/${director.id}/edit`}>Edit Director</Link>
                 </div>
-                <PostList />
+
             </div>
         </div>
     )

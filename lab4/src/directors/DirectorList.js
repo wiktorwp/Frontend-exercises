@@ -9,7 +9,7 @@ const DirectorList = ({ directors, deleteDirectorAction } ,props) => {
             <h3>Directors list</h3>
             {directors.map(director => {
                 return (
-                <div>
+                <div key={"director "+director.id}>
                     <Link to={`/directors/${director.id}`}>
                         {director.name}
                     </Link>

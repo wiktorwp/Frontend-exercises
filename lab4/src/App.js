@@ -17,6 +17,7 @@ import ActorDetails from './actors/ActorDetails';
 import ActorList from './actors/ActorList';
 import ActorForm from './actors/ActorForm';
 import ActorAssign from './actors/ActorAssign';
+import ActorEdit from './actors/ActorEdit';
 
 function App() {
   return (
@@ -51,43 +52,43 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/directors/:id/edit">
+          <Route exact path="/directors/:id/edit">
             <DirectorEdit />
           </Route>
-          <Route path="/directors/add">
+          <Route exact path="/directors/add">
             <DirectorForm />
           </Route>
           <Route exact path="/directors/:id">
             <DirectorDetails />
           </Route>
-          <Route path="/directors">
+          <Route exact path="/directors">
             <DirectorList />
           </Route>
-          <Route path="/movies/:id/assign">
-            <ActorAssign/>
-          </Route>
-          <Route path="/movies/add">
+          <Route exact path="/movies/add">
             <MovieForm />
           </Route>
-          <Route path="/movies/:id">
+          <Route exact path="/movies/:id">
             <MovieDetails />
           </Route>
-          <Route path="/movies">
+          <Route exact path="/movies">
             <MovieList />
           </Route>
-          <Route path="/actors/add">
+          <Route exact path="/actors/:id/edit">
+            <ActorEdit />
+          </Route>
+          <Route exact path="/actors/add">
             <ActorForm />
           </Route>
-          <Route path="/actors/:id">
+          <Route exact path="/actors/:id">
             <ActorDetails />
           </Route>
-          <Route path="/actors">
+          <Route exact path="/actors">
             <ActorList />
           </Route>
-          <Route path="/movies">
+          <Route exact path="/movies">
             <MovieList />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

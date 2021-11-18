@@ -6,7 +6,7 @@ const ActorList = ({actors}, props) => {
     return (
         <div>
             <h3>Actor list</h3>
-            {actors.map(actor => (<div>{<Link to={`/actors/${actor.id}`}>
+            {actors.map(actor => (<div key={"actor "+ actor.id}>{<Link to={`/actors/${actor.id}`}>
                         {actor.name}
                     </Link>}</div>))}
         </div>
