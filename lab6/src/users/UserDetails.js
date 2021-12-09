@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import PostList from "../posts/PostList";
-const UserDetails = ({user},props) => {
+
+const UserDetails = ({ user }, props) => {
 
     return (
 

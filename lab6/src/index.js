@@ -6,11 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { userReducer } from './reducers/UserReducer';
+import { productReducer } from './reducers/ProductReducer'
+import { downloadedReducer } from './reducers/DownloadedReducer'
 import logger from './middlewares/Logger';
 
 let store = createStore(
   combineReducers(
-    { 
+    {
+      downloaded: downloadedReducer,
       users: userReducer,
       products: productReducer
     }

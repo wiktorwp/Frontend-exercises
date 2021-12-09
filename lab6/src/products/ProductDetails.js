@@ -1,17 +1,17 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import PostList from "../posts/PostList";
-const ProductDetails = ({product},props) => {
+
+const ProductDetails = ({ product }, props) => {
 
     return (
 
         <div>
             <h3>Product details</h3>
             <div>
-                <div>{product.productname}</div>
-                <div>{product.email}</div>
-                <div>{product.name.firstname + " " + product.name.lastname}</div>
+                <div>{product.title}</div>
+                <div>{product.description}</div>
+                <div>{product.price}</div>
 
             </div>
         </div>

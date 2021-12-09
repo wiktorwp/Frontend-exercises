@@ -8,6 +8,8 @@ import {
 import Home from './core/Home';
 import UserList from './users/UserList';
 import UserDetails from './users/UserDetails';
+import ProductList from './products/ProductList';
+import ProductDetails from './products/ProductDetails';
 
 function App() {
   return (
@@ -30,11 +32,11 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route exact path="/products/:id">
-            <UserDetails />
+          <Route exact path="/products/:id">
+            <ProductDetails />
           </Route>
           <Route exact path="/products">
-            <UserList />
+            <ProductList />
           </Route>
           <Route exact path="/users/:id">
             <UserDetails />
