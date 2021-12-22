@@ -37,11 +37,11 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
                 <Formik
                     initialValues={{
                         id: prezent.id,
-                        name: '',
-                        receiver: '',
-                        company: '',
-                        manu: '',
-                        rgb: false,
+                        name: prezent.name,
+                        receiver: prezent.receiver,
+                        company: prezent.company,
+                        manu: prezent.manu,
+                        rgb: prezent.rgb,
                     }}
                     onSubmit={(values) => handleSubmit(values)}
                     enableReinitialize={true}>
