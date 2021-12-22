@@ -7,12 +7,19 @@ import { addPrezentAction, deletePrezentAction, updatePrezentsAction, completePr
 const _ = require('lodash')
 const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction,completePrezentAction, deletePrezentAction }, props) => {
 
+    const noPresents = () => {
+        if (prezents.length == 0) {
+            return <div>Mikołaj nie ma jeszcze żadnych paczek. Pomóż mu i stwórz kilka.</div>
+        }
+    }
+
     return (
         <div>
-            <h3>prezents list</h3>
-            Dodaj nowy prezent
+            <h5>Dodaj nowy prezent</h5>
             <PrezentForm />
             <div className="ItemList">
+            <h5>Wszystkie paczki Świętego Mikołaja</h5>
+            {noPresents()}
             {prezents.map(prezent => {
                 return (
                     <div className="Item" key={prezent.id}>

@@ -23,6 +23,10 @@ div{
   justify-content: center;
 }
 
+h5{
+  font-size: 40px;
+}
+
 .Navbar{
   margin:auto;
 }
@@ -52,7 +56,12 @@ div{
 }
 
 .manu input{
+  height: 25px;
   width: 10%;
+}
+
+.rgb input{
+  height: 50px;
 }
 
 .ItemList button{
@@ -70,6 +79,7 @@ div{
 }
 
 .Item a{
+  font-size: 30px;
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: #3b3b3b;

@@ -51,8 +51,10 @@ const PrezentForm = ({history, addPrezentAction},props) => {
                         <Field type="radio" name="manu" value="Nvidia" />
                         </label>
                         </div>
-                        Czy ma rgb?
+                        <div className="rgb">
+                        <h1>Czy ma rgb?</h1>
                         <Field type="checkbox" name="rgb"/>
+                        </div>
                         <button type="submit">
                             Zatwierdz
                         </button>

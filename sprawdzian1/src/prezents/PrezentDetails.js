@@ -23,7 +23,7 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
     return (
 
         <div>
-            <h3>prezent details</h3>
+            <h3>Konfiguracja przedmiotu w paczce</h3>
             <div>
                 <div>Nazwa prezentu: {prezent.name}</div>
                 <div>Otrzyma go: {prezent.receiver}</div>
@@ -31,7 +31,7 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
                 <div>Tworca czesci prezentu: {prezent.manu}</div>
                 <div>Czy ma rgb? {checkRgb()}</div>
 
-                <div>Edycja</div>
+                <h5>Edycja</h5>
                 <Formik
                 initialValues={{
                     id: prezent.id,
@@ -55,12 +55,20 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
                             <option value="asus">Asus</option>
                         </Field>
                         Producent prezentu<br/>
+                        <div className="manu">
+                        <label>
                         AMD
                         <Field type="radio" name="manu" value="AMD" />
+                        </label>
+                        <label>
                         Nvidia
                         <Field type="radio" name="manu" value="Nvidia" />
-                        Czy ma rgb?
+                        </label>
+                        </div>
+                        <div className="rgb">
+                        <h1>Czy ma rgb?</h1>
                         <Field type="checkbox" name="rgb"/>
+                        </div>
                         <button type="submit">
                             Zatwierdz
                         </button>
