@@ -1,13 +1,13 @@
 import { connect } from "react-redux";
 
 
-const Home = ( props) => {
+const Home = (props) => {
     return (
         <div>
             <div>
-            <h3>Prezenty sw mikolaja</h3>
-            <h1>Przejdz do /prezents aby wyswietlic liste</h1>
-        </div>
+                <h3>Prezenty sw mikolaja</h3>
+                <h1>Przejdz do /prezents aby wyswietlic liste</h1>
+            </div>
         </div>
     )
 };

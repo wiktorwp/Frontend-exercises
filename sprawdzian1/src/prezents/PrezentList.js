@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import PrezentForm from './PrezentForm'
 import { addPrezentAction, deletePrezentAction, updatePrezentsAction, completePrezentAction } from "../prezents/PrezentActions";
 const _ = require('lodash')
-const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction,completePrezentAction, deletePrezentAction }, props) => {
+const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction, completePrezentAction, deletePrezentAction }, props) => {
 
     const noPresents = () => {
         if (prezents.length == 0) {
@@ -18,15 +18,15 @@ const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction,complete
             <h5>Dodaj nowy prezent</h5>
             <PrezentForm />
             <div className="ItemList">
-            <h5>Wszystkie paczki Świętego Mikołaja</h5>
-            {noPresents()}
-            {prezents.map(prezent => {
-                return (
-                    <div className="Item" key={prezent.id}>
-                        <Link to={`/prezents/${prezent.id}`}>{prezent.receiver}</Link>
-                        <button onClick={() => deletePrezentAction(prezent)}>Usuń</button>
-                    </div>)
-            })}
+                <h5>Wszystkie paczki Świętego Mikołaja</h5>
+                {noPresents()}
+                {prezents.map(prezent => {
+                    return (
+                        <div className="Item" key={prezent.id}>
+                            <Link to={`/prezents/${prezent.id}`}>{prezent.receiver}</Link>
+                            <button onClick={() => deletePrezentAction(prezent)}>Usuń</button>
+                        </div>)
+                })}
             </div>
         </div>
     )
