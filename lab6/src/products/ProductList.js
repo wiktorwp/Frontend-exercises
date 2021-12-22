@@ -32,8 +32,8 @@ const ProductList = ({ products, addProductAction, updateProductsAction, deleteP
     }
 
 
-    function categoryFilter(cat){
-        updateProductsAction(_.filter(products, {'category': cat}))
+    function categoryFilter(cat) {
+        updateProductsAction(_.filter(products, { 'category': cat }))
     }
 
     return (
@@ -41,19 +41,19 @@ const ProductList = ({ products, addProductAction, updateProductsAction, deleteP
             <h3>Products list</h3>
             <ProductForm />
             <div className="Sorting">
-            Sortuj:
-            <button onClick={() => { alphabetSort() }}>Alfabetycznie</button>
-            <button onClick={() => { priceSort() }}>Cena rosnąco</button>
+                Sortuj:
+                <button onClick={() => { alphabetSort() }}>Alfabetycznie</button>
+                <button onClick={() => { priceSort() }}>Cena rosnąco</button>
             </div>
             <div className="Filtering">
-            <Formik
-            initialValues={{
-                category: '',
-            }}
-                onSubmit={(values) => categoryFilter(values.category)}>
+                <Formik
+                    initialValues={{
+                        category: '',
+                    }}
+                    onSubmit={(values) => categoryFilter(values.category)}>
                     <Form>
                         Kategoria
-                        <Field name="category" /><br/>
+                        <Field name="category" /><br />
                         <button type="submit">
                             Zatwierdz
                         </button>
