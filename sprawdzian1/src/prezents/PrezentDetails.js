@@ -23,13 +23,15 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
     return (
 
         <div>
-            <h3>Konfiguracja przedmiotu w paczce</h3>
+            <h5>Konfiguracja przedmiotu w paczce</h5>
             <div>
+                <div className="details"> 
                 <div>Nazwa prezentu: {prezent.name}</div>
                 <div>Otrzyma go: {prezent.receiver}</div>
                 <div>Firma robiaca prezent: {prezent.company}</div>
                 <div>Tworca czesci prezentu: {prezent.manu}</div>
                 <div>Czy ma rgb? {checkRgb()}</div>
+            </div>
 
                 <h5>Edycja</h5>
                 <Formik

@@ -23,7 +23,7 @@ const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction, complet
                 {prezents.map(prezent => {
                     return (
                         <div className="Item" key={prezent.id}>
-                            <Link to={`/prezents/${prezent.id}`}>{prezent.receiver}</Link>
+                            <Link to={`/prezents/${prezent.id}`}>Prezent dla: {prezent.receiver}</Link>
                             <button onClick={() => deletePrezentAction(prezent)}>Usuń</button>
                         </div>)
                 })}
