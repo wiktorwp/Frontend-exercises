@@ -22,16 +22,22 @@ const PrezentForm = ({history, addPrezentAction},props) => {
                 initialValues={{
                     id: uuidv4(),
                     name: '',
-                    date: '',
-                    done: false,
+                    receiver: '',
+                    company: '',
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
                     <Form>
-                        prezent Name
+                        Nazwa prezentu
                         <Field name="name" /><br/>
-                        prezent Date
-                        <Field name="date" /><br/>
+                        Kto otrzyma prezent
+                        <Field name="receiver" /><br/>
+                        Firma prezentu
+                        <Field as="select" name="company">
+                            <option value="amd">AMD</option>
+                            <option value="nvidia">nvidia</option>
+                        </Field>
+                        <Field type="checkbox" name="rgb" value="RGB?" />
                         <button type="submit">
                             Zatwierdz
                         </button>
