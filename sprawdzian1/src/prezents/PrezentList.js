@@ -10,9 +10,8 @@ const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction,complete
     return (
         <div>
             <h3>prezents list</h3>
+            Dodaj nowy prezent
             <PrezentForm />
-            <div className="Filtering">
-            </div>
             {prezents.map(prezent => {
                 return (
                     <div key={prezent.id}>

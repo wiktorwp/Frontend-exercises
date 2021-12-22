@@ -8,11 +8,11 @@ import { editPrezentAction } from "./PrezentActions";
 
 const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
 
-    const checkDone = () => {
-        if (prezent.done == false){
-            return "Do zrobienia"
+    const checkRgb = () => {
+        if (prezent.rgb == true){
+            return "Prezent bedzie sie swiecil jak tecza"
         }
-        else return "Skonczone"
+        else return "Prezent bedzie elegancki bez swiatelek"
     }
 
     const handleSubmit = (values) => {
@@ -25,25 +25,42 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
         <div>
             <h3>prezent details</h3>
             <div>
-                <div>{prezent.name}</div>
-                <div>{prezent.date}</div>
-                <div>{checkDone()}</div>
+                <div>Nazwa prezentu: {prezent.name}</div>
+                <div>Otrzyma go: {prezent.receiver}</div>
+                <div>Firma robiaca prezent: {prezent.company}</div>
+                <div>Tworca czesci prezentu: {prezent.manu}</div>
+                <div>Czy ma rgb? {checkRgb()}</div>
 
                 <div>Edycja</div>
                 <Formik
                 initialValues={{
-                    id: prezent.id,
+                    id: uuidv4(),
                     name: '',
-                    date: '',
-                    done: false,
+                    receiver: '',
+                    company: '',
+                    manu: '',
+                    rgb: false,
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
                     <Form>
-                        prezent Name
+                        Nazwa prezentu
                         <Field name="name" /><br/>
-                        prezent Date
-                        <Field name="date" /><br/>
+                        Kto otrzyma prezent
+                        <Field name="receiver" /><br/>
+                        Firma prezentu
+                        <Field as="select" name="company">
+                            <option value="msi">MSI</option>
+                            <option value="gigabyte">Gigabyte</option>
+                            <option value="asus">Asus</option>
+                        </Field>
+                        Producent prezentu<br/>
+                        AMD
+                        <Field type="radio" name="manu" value="AMD" />
+                        Nvidia
+                        <Field type="radio" name="manu" value="Nvidia" />
+                        Czy ma rgb?
+                        <Field type="checkbox" name="rgb"/>
                         <button type="submit">
                             Zatwierdz
                         </button>
