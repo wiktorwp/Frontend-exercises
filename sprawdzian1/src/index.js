@@ -6,13 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { prezentReducer } from './prezents/PrezentReducer'
-import { noteReducer } from './notes/NoteReducer'
 import logger from './middlewares/Logger';
 
 let store = createStore(
   combineReducers(
     {
-      notes: noteReducer,
       prezents: prezentReducer,
     }
   ), applyMiddleware(logger));

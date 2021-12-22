@@ -3,6 +3,7 @@
   margin: auto;
   background-color: #121212;
   color: white;
+  font-size: 24px;
 }
 input{ 
   border-radius: 10px;
@@ -44,6 +45,14 @@ div{
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.manu{
+  display: flex;
+}
+
+.manu input{
+  width: 10%;
 }
 
 .ItemList button{

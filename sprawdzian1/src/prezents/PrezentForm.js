@@ -41,10 +41,16 @@ const PrezentForm = ({history, addPrezentAction},props) => {
                             <option value="asus">Asus</option>
                         </Field>
                         Producent prezentu<br/>
+                        <div className="manu">
+                        <label>
                         AMD
                         <Field type="radio" name="manu" value="AMD" />
+                        </label>
+                        <label>
                         Nvidia
                         <Field type="radio" name="manu" value="Nvidia" />
+                        </label>
+                        </div>
                         Czy ma rgb?
                         <Field type="checkbox" name="rgb"/>
                         <button type="submit">

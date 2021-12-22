@@ -8,9 +8,6 @@ import {
 import Home from './core/Home';
 import PrezentList from './prezents/PrezentList'
 import PrezentDetails from './prezents/PrezentDetails';
-import NoteList from './notes/NoteList';
-import NoteForm from './notes/NoteForm';
-import NoteDetails from './notes/NoteDetails'
 
 function App() {
   return (
@@ -24,23 +21,14 @@ function App() {
             <li>
               <Link to="/prezents">Prezenty</Link>
             </li>
-            <li>
-              <Link to="/notes">Notes</Link>
-            </li>
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/notes/:id">
-            <NoteDetails/>
-          </Route>
           <Route exact path="/prezents/:id">
             <PrezentDetails />
-          </Route>
-          <Route exact path="/notes">
-            <NoteList />
           </Route>
           <Route exact path="/prezents">
             <PrezentList />
