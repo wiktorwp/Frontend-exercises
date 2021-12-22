@@ -24,6 +24,8 @@ const PrezentForm = ({history, addPrezentAction},props) => {
                     name: '',
                     receiver: '',
                     company: '',
+                    manu: '',
+                    rgb: false,
                 }}
                 onSubmit={(values) => handleSubmit(values)}
                 enableReinitialize={true}>
@@ -34,10 +36,17 @@ const PrezentForm = ({history, addPrezentAction},props) => {
                         <Field name="receiver" /><br/>
                         Firma prezentu
                         <Field as="select" name="company">
-                            <option value="amd">AMD</option>
-                            <option value="nvidia">nvidia</option>
+                            <option value="msi">MSI</option>
+                            <option value="gigabyte">Gigabyte</option>
+                            <option value="asus">Asus</option>
                         </Field>
-                        <Field type="checkbox" name="rgb" value="RGB?" />
+                        Producent prezentu<br/>
+                        AMD
+                        <Field type="radio" name="manu" value="AMD" />
+                        Nvidia
+                        <Field type="radio" name="manu" value="Nvidia" />
+                        Czy ma rgb?
+                        <Field type="checkbox" name="rgb"/>
                         <button type="submit">
                             Zatwierdz
                         </button>
