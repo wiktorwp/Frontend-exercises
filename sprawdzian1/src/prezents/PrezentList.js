@@ -12,15 +12,15 @@ const PrezentList = ({ prezents, addprezentAction, updatePrezentsAction,complete
             <h3>prezents list</h3>
             Dodaj nowy prezent
             <PrezentForm />
+            <div className="ItemList">
             {prezents.map(prezent => {
                 return (
-                    <div key={prezent.id}>
+                    <div className="Item" key={prezent.id}>
                         <Link to={`/prezents/${prezent.id}`}>{prezent.name}</Link>
                         <button onClick={() => deletePrezentAction(prezent)}>Usuń</button>
-                        <button onClick={() => {prezent.done=true; completePrezentAction(prezent)}}> Zrobione</button>
                     </div>)
             })}
-
+            </div>
         </div>
     )
 };

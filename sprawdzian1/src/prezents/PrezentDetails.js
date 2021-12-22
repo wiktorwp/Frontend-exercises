@@ -34,7 +34,7 @@ const PrezentDetails = ({ prezent, history, editPrezentAction }, props) => {
                 <div>Edycja</div>
                 <Formik
                 initialValues={{
-                    id: uuidv4(),
+                    id: prezent.id,
                     name: '',
                     receiver: '',
                     company: '',
