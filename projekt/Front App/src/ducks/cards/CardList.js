@@ -6,18 +6,18 @@ import { addCardAction, deleteCardAction, updateCardsAction, completeCardAction 
 import { cardDownloadedChangeAction } from "../../ducks/downloaded/DownloadedActions";
 const axios = require('axios')
 const _ = require('lodash')
-const CardList = ({ cards, addCardAction, updateCardsAction, completeCardAction, deleteCardAction, cardDownloadedChangeAction, downloaded }, props) => {
+const CardList = ({ cards, addCardAction, deleteCardAction, cardDownloadedChangeAction }, props) => {
 
 
     const getCards = async () => {
         console.log("def")
-        await axios.post("http://localhost:5000/cards/reload")
-        await axios.get("http://localhost:5000/cards")
+        await axios.post("http://localhost:5000/cards/reload").then()
+        await axios.get("http://localhost:5000/cards/")
             .then(async function (response) {
                 console.log(response.data.allCards)
                 await response.data.allCards.map(card => (addCardAction(card)))
-                cardDownloadedChangeAction()
             })
+    
     }
 
     const [cardsTemp, setCardsTemp] = useState(cards)
@@ -26,8 +26,15 @@ const CardList = ({ cards, addCardAction, updateCardsAction, completeCardAction,
         setCardsTemp(cards)
     }, [cards])
 
-    const deleteCard = (card) => {
+    useEffect(() => {
+        if (cards.length === 0) {
+            getCards()
+        }
+    }, [])
+
+    const deleteCard = async (card) => {
         deleteCardAction(card)
+        await axios.delete(`http://localhost:5000/cards/${card._id}`)
         console.log(cards)
         setCardsTemp(cardsTemp.filter(el => el._id !== card._id))
     }
