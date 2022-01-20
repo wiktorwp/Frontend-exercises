@@ -26,8 +26,15 @@ const Producents = ({ producents, addProducentAction, deleteProducentAction, pro
         setProducentsTemp(producents)
     }, [producents])
 
-    const deleteProducent = (producent) => {
+    useEffect(() => {
+        if (producents.length === 0) {
+            getProducents()
+        }
+    }, [])
+
+    const deleteProducent = async (producent) => {
         deleteProducentAction(producent)
+        await axios.delete(`http://localhost:5000/producents/${producent._id}`).then()
         console.log(producents)
         setProducentsTemp(producentsTemp.filter(el => el._id !== producent._id))
     }
